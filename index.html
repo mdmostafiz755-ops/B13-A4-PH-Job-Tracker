@@ -21,6 +21,12 @@
         * {
             font-family: "Geist", sans-serif;
         }
+        .left-border-green{
+            border-left: 5px solid rgb(10, 214, 10) ;
+        }
+        .left-border-red{
+            border-left: 5px solid red ;
+        }
     </style>
 </head>
 
@@ -32,15 +38,15 @@
             <div class="grid grid-cols-3 grid-rows-1 gap-4">
                 <div class="bg-[#ffffff] p-4 rounded-md">
                     <p>Total</p>
-                    <h2 class="text-lg font-bold">8</h2>
+                    <h2 class="text-lg font-bold" id="total-job">8</h2>
                 </div>
                 <div class="bg-[#ffffff] p-4 rounded-md ">
                     <p>Interview</p>
-                    <h2 class="text-[green] text-lg font-bold">0</h2>
+                    <h2 class="text-[green] text-lg font-bold" id="interview-count">0</h2>
                 </div>
                 <div class="bg-[#ffffff] p-4 rounded-md">
                     <p>Rejected</p>
-                    <h2 class="text-[red] text-lg font-bold">0</h2>
+                    <h2 class="text-[red] text-lg font-bold" id="reject-count">0</h2>
                 </div>
             </div>
             <hr class="mt-8 mb-8 border-1 border-[#E6E7E9]">
@@ -52,19 +58,19 @@
                 <div>
                     <h3 class="text-lg font-bold">Available jobs</h3>
                 </div>
-                <div>8 Jobs</div>
+                <div id="toShowOutof">8 Jobs</div>
             </div>
             <!--btns-->
-            <div class="pt-6 grid gap-3 grid-cols-3 lg:w-3/12 md:w-6/12 w-8/12">
-                <div class="btn btn-info text-white">All</div>
-                <div class="btn btn-nutral">Interview</div>
-                <div class="btn btn-nutral">Rejected</div>
+            <div class="pt-6 grid gap-6 grid-cols-3 lg:w-5/12 md:w-8/12 sm:w-11/12">
+                <div class="btn btn-info text-white pl-10 pr-10" id="btn-all">All</div>
+                <div class="btn btn-nutral pl-10 pr-10" id="btn-interview">Interview</div>
+                <div class="btn btn-nutral pl-10 pr-10" id="btn-reject">Rejected</div>
             </div>
         </section>
         <!--cards-->
-        <section class="pt-4 grid grid-rows-8 gap-6">
+        <section class="pt-4 grid grid-rows-8 gap-6 job-card-container">
             <!--card1-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card" id="card1-container">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">Mobile First Corp</h3>
@@ -73,16 +79,16 @@
                 </div>
                 <p>React Native Developer</p>
                 <p>Remote • Full-time • $130,000 - $175,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
                     users worldwide.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card2-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">WebFlow Agency</h3>
@@ -91,16 +97,16 @@
                 </div>
                 <p>Web Designer & Developer</p>
                 <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with
                     modern web design trends.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card3-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">DataViz Solutions</h3>
@@ -109,16 +115,16 @@
                 </div>
                 <p>React Native Developer</p>
                 <p>Boston, MA • Full-time • $125,000 - $165,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
                     analytical thinking.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card4-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">CloudFirst Inc</h3>
@@ -127,16 +133,16 @@
                 </div>
                 <p>Backend Developer</p>
                 <p>Seattle, WA • Full-time • $140,000 - $190,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices
                     and cloud infrastructure.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card5-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">Innovation Labs</h3>
@@ -145,16 +151,16 @@
                 </div>
                 <p>UI/UX Engineer</p>
                 <p>Austin, TX • Full-time • $110,000 - $150,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and
                     frontend development expertise required.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card6-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">MegaCorp Solutions</h3>
@@ -163,16 +169,16 @@
                 </div>
                 <p>JavaScript Developer</p>
                 <p>New York, NY • Full-time • $130,000 - $170,00</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive
                     compensation, health insurance, and professional development opportunities.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card7-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">StartupXYZ</h3>
@@ -181,16 +187,16 @@
                 </div>
                 <p>Full Stack Engineer</p>
                 <p>Remote • Full-time • $120,000 - $160,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React
                     required. Great benefits and equity package included.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
             <!--card8-->
-            <div class="space-y-3 bg-white p-6 rounded-lg">
+            <div class="space-y-3 bg-white p-6 rounded-lg job-card">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">TechCorp Industries</h3>
@@ -199,12 +205,12 @@
                 </div>
                 <p>Senior Frontend Developer</p>
                 <p>San Francisco, CA • Full-time • $130,000 - $175,000</p>
-                <div class="btn btn-nutral hidden">NOT APPLIED</div>
+                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
                 <p>We are looking for an experienced Frontend Developer to build scalable web applications using React
                     and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="btn btn-outline btn-error">REJECTED</button>
+                    <button class="btn btn-outline btn-success interview-btn">INTERVIEW</button>
+                    <button class="btn btn-outline btn-error reject-btn">REJECTED</button>
                 </div>
             </div>
         </section>
@@ -225,7 +231,8 @@
             </div>
         </section>
     </main>
-    <script src=""></script>
+    <script src="./shortcut.js"></script>
+    <script src="./home.js"></script>
 </body>
 
 </html>
