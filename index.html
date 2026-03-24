@@ -62,24 +62,24 @@
             </div>
             <!--btns-->
             <div class="pt-6 grid gap-6 grid-cols-3 lg:w-5/12 md:w-8/12 sm:w-11/12">
-                <div class="btn btn-info text-white pl-10 pr-10" id="btn-all">All</div>
-                <div class="btn btn-nutral pl-10 pr-10" id="btn-interview">Interview</div>
-                <div class="btn btn-nutral pl-10 pr-10" id="btn-reject">Rejected</div>
+                <div class="btn btn-nutral pl-10 pr-10" id="btn-all" onclick="tab('all')">All</div>
+                <div class="btn btn-nutral pl-10 pr-10" id="btn-interview" onclick="tab('interview')">Interview</div>
+                <div class="btn btn-nutral pl-10 pr-10" id="btn-reject" onclick="tab('reject')">Rejected</div>
             </div>
         </section>
         <!--cards-->
-        <section class="pt-4 grid grid-rows-8 gap-6 job-card-container">
+        <section class="pt-4 grid grid-rows-8 gap-6 job-card-container hidden">
             <!--card1-->
             <div class="space-y-3 bg-white p-6 rounded-lg job-card" id="card1-container">
                 <div class="flex justify-between">
                     <div>
                         <h3 class="text-2xl font-bold">Mobile First Corp</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>React Native Developer</p>
                 <p>Remote • Full-time • $130,000 - $175,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
                     users worldwide.</p>
                 <div>
@@ -93,11 +93,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">WebFlow Agency</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>Web Designer & Developer</p>
                 <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with
                     modern web design trends.</p>
                 <div>
@@ -111,11 +111,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">DataViz Solutions</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>React Native Developer</p>
                 <p>Boston, MA • Full-time • $125,000 - $165,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
                     analytical thinking.</p>
                 <div>
@@ -129,11 +129,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">CloudFirst Inc</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>Backend Developer</p>
                 <p>Seattle, WA • Full-time • $140,000 - $190,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices
                     and cloud infrastructure.</p>
                 <div>
@@ -147,11 +147,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">Innovation Labs</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>UI/UX Engineer</p>
                 <p>Austin, TX • Full-time • $110,000 - $150,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and
                     frontend development expertise required.</p>
                 <div>
@@ -165,11 +165,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">MegaCorp Solutions</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>JavaScript Developer</p>
                 <p>New York, NY • Full-time • $130,000 - $170,00</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive
                     compensation, health insurance, and professional development opportunities.</p>
                 <div>
@@ -183,11 +183,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">StartupXYZ</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>Full Stack Engineer</p>
                 <p>Remote • Full-time • $120,000 - $160,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React
                     required. Great benefits and equity package included.</p>
                 <div>
@@ -201,11 +201,11 @@
                     <div>
                         <h3 class="text-2xl font-bold">TechCorp Industries</h3>
                     </div>
-                    <div><i class="fa-regular fa-trash-can cursor-pointer"></i></div>
+                    <div><i class="fa-regular fa-trash-can cursor-pointer delete"></i></div>
                 </div>
                 <p>Senior Frontend Developer</p>
                 <p>San Francisco, CA • Full-time • $130,000 - $175,000</p>
-                <div class="btn btn-nutral hidden badge">NOT APPLIED</div>
+                <div class="btn btn-nutral badge">NOT APPLIED</div>
                 <p>We are looking for an experienced Frontend Developer to build scalable web applications using React
                     and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 <div>
@@ -215,7 +215,7 @@
             </div>
         </section>
         <!--hidden popup window-->
-        <section class="pt-6 hidden">
+        <section class="pt-6 hidden" id="nojob-popup">
             <div class="space-y-3 bg-white p-6 rounded-lg">
                 <div class="grid items-center justify-center text-center">
                     <div class="grid items-center justify-center">
@@ -230,7 +230,15 @@
                 </div>
             </div>
         </section>
+        
     </main>
+    <section id="interview-section" class="space-y-6 hidden">
+<h1>interview</h1>
+        </section>
+
+        <section id="reject-section" class="space-y-6 hidden">
+<h1>rejcted</h1>
+        </section>
     <script src="./shortcut.js"></script>
     <script src="./home.js"></script>
 </body>
