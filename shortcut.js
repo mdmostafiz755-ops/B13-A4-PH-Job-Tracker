@@ -14,6 +14,4 @@ function selectorClassN(ClassN) {
     const selectCn = document.querySelectorAll(`.${ClassN}`);
     return selectCn;
 }
-//pore lagbe
-const totalJob = selectorId("total-job");
-const rejectCount = selectorId("reject-count");
+
