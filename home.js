@@ -9,9 +9,11 @@ const interviewCount = selectorId("interview-count");
 const rejectCount = selectorId("reject-count");
 const totaljobCount = selectorId("total-job");
 const toShowOutofCount = selectorId("toShowOutof");
+const noJob = selectorId("nojob-popup");
+
 function tab(tab) {
-    const tabs = ['all', 'interview', 'reject'];
     currentTab=tab;
+    const tabs = ['all', 'interview', 'reject'];
     for (const t of tabs) {
         const tabName = selectorId("btn-" + t);
         if (t === tab) {
@@ -22,6 +24,7 @@ function tab(tab) {
             tabName.classList.remove(...tabActive);
             tabName.classList.add(...tabInactive);
         }
+        //updateStat();
     }
     const pages = [allcontainer, interviewcontainer, rejectcontainer];
     for (let page of pages) {
@@ -34,6 +37,7 @@ function tab(tab) {
     } else {
         rejectcontainer.classList.remove("hidden");
     }
+    updateStat();
 }
 tab(currentTab);//to make the all-tab active firstly after loading
 
@@ -72,10 +76,9 @@ document.addEventListener('click', function (event) {
 
 
 //stats section
+
 function updateStat() {
     
-    // //toShowOutofCount.innerText=allcontainer.children.length;
-
     const Stats = {
         all: allcontainer.children.length,
         interview: interviewcontainer.children.length,
@@ -85,9 +88,15 @@ function updateStat() {
     totaljobCount.innerText = Stats.all;
     interviewCount.innerText = Stats.interview;
     rejectCount.innerText = Stats.reject;
-
+    toShowOutofCount.innerText = Stats[currentTab];
+    //console.log(noJob.innerText);
+    if(Stats[currentTab]<1){
+        noJob.classList.remove('hidden');
+    }else{
+        noJob.classList.add('hidden');
+    }
 }
 updateStat();
 
-const noJob = selectorId("nojob-popup");
+
 
